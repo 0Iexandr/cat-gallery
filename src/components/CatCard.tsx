@@ -56,11 +56,9 @@ const CatCard: React.FC<CatCardProps> = ({ cat }) => {
       />
       <div className="flex justify-between items-center gap-x-2">
         <div className="flex flex-col !m-0">
-          <span className="text-lg">
-            {cat.breeds?.[0].name ? cat.breeds[0].name : ''}
-          </span>
+          <span className="text-lg">{cat.breeds?.[0]?.name ?? 'No info'}</span>
           <span className="text-sm text-slate-500">
-            {cat.breeds?.[0].temperament ? cat.breeds[0].temperament : ''}
+            {cat.breeds?.[0]?.temperament ?? 'No info'}
           </span>
         </div>
         <button

@@ -26,7 +26,7 @@ const CatsGallery: React.FC<CatsGalleryProps> = ({
   return (
     <section className="py-10 flex flex-col items-center gap-y-14 px-6 lg:px-10">
       <select className="px-4 py-3 rounded bg-layout" onChange={onBreedChange}>
-        <option value="">Select breed</option>
+        <option value="">All breeds</option>
         {breeds.map(({ id, name }) => (
           <option key={id} value={id}>
             {name}
@@ -34,7 +34,7 @@ const CatsGallery: React.FC<CatsGalleryProps> = ({
         ))}
       </select>
       {isFetching && <Loader transparent={true} />}
-      {!catsData ? (
+      {catsData.length === 0 ? (
         <h2>No photos</h2>
       ) : (
         <>
